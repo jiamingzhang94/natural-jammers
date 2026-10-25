@@ -95,6 +95,8 @@ The partition is recomputed after each transform (Table 5 and Appendix F; origin
 | crop 4% | 2,270 | 5,201 | 0.416 | 0.541 |
 | crop 6% | 2,271 | 5,188 | 0.381 | 0.514 |
 | crop 8% | 2,294 | 5,162 | 0.353 | 0.488 |
+| LPF r = 110 | 2,187 | 4,944 | 0.812 | 0.877 |
+| LPF r = 105 | 2,225 | 4,920 | 0.731 | 0.828 |
 | LPF r = 100 | 2,291 | 4,847 | 0.650 | 0.769 |
 
 The numbers in steps 2–4 come from a deterministic FP32 run on one A100 (about 30 minutes for all
