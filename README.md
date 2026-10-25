@@ -30,15 +30,11 @@ python build_partition.py --data /path/to/imagenet/val --lens resnet50_l2_eps1
 This writes `data/partitions/resnet50_l2_eps1.csv` with one row per validation image
 (`index, file, label, pred_std, pred_rob, set`), where `set` is `C` (Common: both right), `S` (Spurious:
 only the standard model right), `J` (Jammed: only the robust model right) or `G` (Uninformative).
-The list shipped in this repository is the one used in the paper:
+The list used in the paper is included in this repository, and steps 2–4 read it:
 
 | Common | Spurious | **Jammed** | Uninformative |
 | --- | --- | --- | --- |
 | 33,071 | 5,002 | **2,140** (4.28%) | 9,787 |
-
-Rebuilding it gives 33,075 / 4,998 / 2,141 / 9,786: our scripts run in deterministic FP32
-(`jammers.deterministic_inference`), while the paper's runs used PyTorch's default TF32
-convolutions, which change the prediction of 11 of the 50,000 images. Steps 2–4 use the shipped list.
 
 **Model weights.** Standard models are the torchvision ImageNet-1K (V1) weights. The robust
 ResNet-18, ResNet-50 and WideResNet-50-2 models are the public MadryLab checkpoints
@@ -99,9 +95,7 @@ The partition is recomputed after each transform (Table 5 and Appendix F; origin
 | LPF r = 105 | 2,225 | 4,920 | 0.731 | 0.828 |
 | LPF r = 100 | 2,291 | 4,847 | 0.650 | 0.769 |
 
-The numbers in steps 2–4 come from a deterministic FP32 run on one A100 (about 30 minutes for all
-three steps). Because the paper's runs used TF32, a few borderline images can differ: set sizes by a
-few images and accuracies by at most 0.2 points. All transforms act on the 224×224 center crop in
+Steps 2–4 take about 30 minutes on one A100. All transforms act on the 224×224 center crop in
 [0, 1] pixel space (`jammers/transforms.py`).
 
 ## Citation
@@ -117,5 +111,4 @@ few images and accuracies by at most 0.2 points. All transforms act on the 224×
 
 ## License
 
-Code: MIT. The MadryLab robust checkpoints are MIT-licensed. ImageNet images are not redistributed;
-the membership list contains file names only, and use of ImageNet is subject to its terms of access.
+Code: MIT. The MadryLab robust checkpoints are MIT-licensed. Use of ImageNet is subject to its terms of access.

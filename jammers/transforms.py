@@ -47,12 +47,8 @@ def zoom(x, crop):
 
 
 def edge_crop(x, keep):
-    """Remove the border so that a fraction `keep` of the side length remains (e.g. 0.98).
-
-    Matches the Substitution-Paradox runs (Table 5), which resized with PyTorch's
-    antialiased bilinear kernel; for upsampling this differs from plain bilinear
-    only in rounding.
-    """
+    """Remove the border so that a fraction `keep` of the side length remains (e.g. 0.98),
+    then resize back with antialiased bilinear interpolation."""
     return center_crop_resize(x, int(round(x.shape[-1] * keep)), antialias=True)
 
 
