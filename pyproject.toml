@@ -1,0 +1,23 @@
+[project]
+name = "natural-jammers"
+version = "1.0.0"
+description = "Natural Jammers: When Non-Robust Features Become Antagonistic (NeurIPS 2026)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+    "torch>=2.1",
+    "torchvision>=0.16",
+    "numpy",
+    "tqdm",
+    "safetensors",
+    "huggingface_hub",
+]
+
+[project.urls]
+Homepage = "https://jiamingzhang.netlify.app/naturaljammers"
+Repository = "https://github.com/jiamingzhang94/natural-jammers"
+Weights = "https://huggingface.co/jiamingzz/natural-jammers"
+
+[tool.setuptools]
+packages = ["jammers"]
