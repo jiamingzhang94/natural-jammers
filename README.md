@@ -1,6 +1,6 @@
 # Natural Jammers: When Non-Robust Features Become Antagonistic
 
-**NeurIPS 2026 (spotlight)** · [Project page](https://jiamingzhang.netlify.app/naturaljammers) · [Weights](https://huggingface.co/jiamingzz/natural-jammers)
+**NeurIPS 2026 (spotlight)** · [Paper](https://arxiv.org/abs/2610.34785) · [Project page](https://jiamingzhang.netlify.app/naturaljammers) · [Weights](https://huggingface.co/jiamingzz/natural-jammers)
 
 Jiaming Zhang, Fuyao Zhang, Pengjun Xie, Wei Yang Bryan Lim
 
